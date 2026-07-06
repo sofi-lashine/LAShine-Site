@@ -1026,4 +1026,24 @@ textarea {
     height: 64px;
     padding: 6px;
   }
+  /* Footer Credit */
+.footer-credit {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-credit p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 560px) {
+  .footer-credit p {
+    font-size: 11px;
+  }
+}
 }
