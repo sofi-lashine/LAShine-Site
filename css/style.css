@@ -423,8 +423,9 @@ details {
 }
 
 .section-title p:last-child {
-  color: var(--muted);
+  color: #ffffff;
   font-size: 17px;
+  font-weight: 400;
 }
 
 .feature-grid,
