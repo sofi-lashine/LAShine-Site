@@ -1026,7 +1026,9 @@ textarea {
     height: 64px;
     padding: 6px;
   }
-  /* Footer Credit */
+}
+
+/* Footer Credit */
 .footer-credit {
   text-align: center;
   padding-top: 20px;
@@ -1045,4 +1047,28 @@ textarea {
   .footer-credit p {
     font-size: 11px;
   }
+}
+
+/* ========================================
+   FORM LABEL FIX - NOT BOLD & LARGER
+   ======================================== */
+.estimate-form label {
+  font-weight: 400 !important;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.estimate-form input,
+.estimate-form select,
+.estimate-form textarea {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.estimate-form input::placeholder,
+.estimate-form select::placeholder,
+.estimate-form textarea::placeholder {
+  font-weight: 300;
+  color: #999;
 }
