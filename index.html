@@ -475,31 +475,31 @@
           <a class="phone-large" href="tel:3372406084">337-240-6084</a>
         </div>
 
-        <form class="estimate-form reveal" action="https://api.web3forms.com/submit" method="POST">
+        <form class="estimate-form reveal" id="estimateForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="0d18a5c6-7abb-4541-bc7b-fb821c133922">
           <input type="hidden" name="subject" value="New LA Shine Cleaning Estimate Request">
 
           <div class="form-row">
             <label>
-              Full Name
+              Full Name *
               <input name="name" required placeholder="Your name">
             </label>
 
             <label>
-              Phone Number
+              Phone Number *
               <input name="phone" required placeholder="337-000-0000">
             </label>
           </div>
 
           <div class="form-row">
             <label>
-              Email Address
-              <input name="email" type="email" placeholder="you@email.com">
+              Email Address *
+              <input name="email" type="email" required placeholder="you@email.com">
             </label>
 
             <label>
-              Property Address
-              <input name="address" placeholder="Street, City">
+              Property Address *
+              <input name="address" required placeholder="Street, City">
             </label>
           </div>
 
@@ -549,6 +549,9 @@
             <textarea name="message" rows="5" placeholder="Tell us what you need cleaned"></textarea>
           </label>
 
+          <!-- hCaptcha -->
+          <div class="h-captcha" data-captcha="true"></div>
+
           <button class="btn primary full" type="submit">
             Request My Free Estimate
           </button>
@@ -592,6 +595,24 @@
   <a class="floating-call" href="tel:3372406084">Call Now</a>
 
   <button class="top-btn" id="topBtn" aria-label="Back to top">↑</button>
+
+  <!-- Web3Forms Script for hCaptcha -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <!-- Client Side Validation for hCaptcha -->
+  <script>
+    const form = document.getElementById('estimateForm');
+
+    form.addEventListener('submit', function(e) {
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
+
+      if (!hCaptcha || !hCaptcha.value) {
+        e.preventDefault();
+        alert("Please complete the captcha verification.");
+        return;
+      }
+    });
+  </script>
 
   <script src="js/main.js"></script>
 </body>
