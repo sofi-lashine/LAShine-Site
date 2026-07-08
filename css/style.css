@@ -101,8 +101,7 @@ img {
   font-size: 40px;
   font-weight: 800;
   letter-spacing: 1px;
-  animation: flashText 0.3s ease 3;
-  /* 0.3s × 3 = 0.9s total flash time, repeats 3 times */
+  animation: pulse 2s infinite alternate;
 }
 
 .cursor-glow {
