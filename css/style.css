@@ -650,7 +650,8 @@ details p {
 }
 
 .phone-large {
-  display: inline-block;
+  display: block;
+  text-align: center;
   color: var(--gold-light);
   font-size: 32px;
   font-weight: 900;
