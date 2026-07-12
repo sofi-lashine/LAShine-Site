@@ -137,7 +137,7 @@ img {
 }
 
 /* ========================================
-   BRAND / LOGO STYLES
+   BRAND / LOGO STYLES - FIXED
    ======================================== */
 .brand {
   display: flex;
@@ -149,20 +149,21 @@ img {
 }
 
 .brand img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 14px;
   background: #ffffff;
   padding: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 @media (min-width: 768px) {
   .brand img {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
     padding: 6px;
   }
 }
@@ -1032,9 +1033,10 @@ textarea {
   }
 
   .brand img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     padding: 3px;
+    border-radius: 12px;
   }
 
   .hero-actions {
