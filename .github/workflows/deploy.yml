@@ -1,0 +1,36 @@
+name: Deploy with Web3Forms Key
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace Web3Forms Key
+        run: |
+          sed -i 's/REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY/${{ secrets.WEB3FORMS_KEY }}/g' index.html
+
+      - name: Verify replacement (optional)
+        run: |
+          echo "Checking if key was replaced..."
+          grep -q "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY" index.html && echo "❌ Key NOT replaced!" || echo "✅ Key replaced successfully!"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          force_orphan: true
